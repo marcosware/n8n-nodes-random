@@ -6,7 +6,7 @@
 
 Esse é um conector comunitário da n8n. Ele permite você utilizar a [API do Random.org](https://www.random.org/integers/) para gerar verdadeiros números aleatórios entre dois valores em seus fluxos n8n.
 
-[n8n](https://n8n.io/) is a [fair-code licensed](https://docs.n8n.io/reference/license/) workflow automation platform.
+[n8n](https://n8n.io/) é uma plataforma de automação de fluxo de trabalho [licenciada com código justo](https://docs.n8n.io/reference/license/).
 
 ## Índice
 
@@ -49,7 +49,7 @@ Você precisa do seguinte instalado na sua máquina de desenvolvimento:
 ## Variáveis de Ambiente
 
 Se rodando n8n via Docker, você pode configurar as variáveis de mabiente em um arquivo .env ou diretamente no docker-compose.yml:
-    ```bash
+    ```
     GENERIC_TIMEZONE=America/Sao_Paulo
     TZ=America/Sao_Paulo
     N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true
