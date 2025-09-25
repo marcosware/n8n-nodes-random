@@ -49,7 +49,7 @@ You need the following installed on your development machine:
 ## Environment Variables
 
 If running n8n via Docker, you can configure environment variables in a .env file or directly in docker-compose.yml:
-    ```bash
+    ```
     GENERIC_TIMEZONE=America/Sao_Paulo
     TZ=America/Sao_Paulo
     N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true
