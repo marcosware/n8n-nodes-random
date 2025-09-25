@@ -22,7 +22,20 @@ export class Random implements INodeType {
         outputs: ['main'],
 	    properties: [
             {
-                displayName: 'Valor Mínimo',
+                displayName: 'Operation',
+                name: 'operation',
+                type: 'options',
+                options: [
+                {
+                    name: 'True Random Number Generator',
+                    value: 'trng',
+                    description: 'Generate one random integer between Min and Max values',
+                },
+                ],
+                default: 'trng',
+            },
+            {
+                displayName: 'Minimal Value',
                 name: 'min',
                 type: 'number',
                 required: true,
@@ -32,11 +45,11 @@ export class Random implements INodeType {
                     numberPrecision: 0,
                 },
                 default: 1,
-                description: 'Valor mínimo que pode ser gerado.',
-                hint: 'Mínimo: -1000000000'
+                description: 'Minimum value that can be generated.',
+                hint: 'Lowest: -1000000000'
             },
             {
-                displayName: 'Valor Máximo',
+                displayName: 'Maximum Value',
                 name: 'max',
                 type: 'number',
                 required: true,
@@ -46,25 +59,29 @@ export class Random implements INodeType {
                     numberPrecision: 0,
                 },
                 default: 10,
-                description: 'Valor máximo que pode ser gerado.',
-                hint: 'Máximo: 1000000000'
+                description: 'Maximum value that can be generated.',
+                hint: 'Highest: 1000000000'
             }
 	    ],
 	};
 	// The execute method will go here
 	async execute(this: IExecuteFunctions): Promise<INodeExecutionData[][]> {
         const responseData: IDataObject[] = [];
-        const min = this.getNodeParameter('min', 0) as number;
-        const max = this.getNodeParameter('max', 0) as number;
-        const url = `https://www.random.org/integers/?num=1&min=${min}&max=${max}&col=1&base=10&format=plain&rnd=new`;
-
-        const response = await this.helpers.httpRequest({
-                method: 'GET',
-                url,
-                json: false
-            });
-
-        responseData.push({ random: response });
+        const items = this.getInputData();
+        for (let i = 0; i < items.length; i++) {
+            const operation = this.getNodeParameter('operation', i) as string;
+            if (operation === 'trng') {
+                const min = this.getNodeParameter('min', 0) as number;
+                const max = this.getNodeParameter('max', 0) as number;
+                const url = `https://www.random.org/integers/?num=1&min=${min}&max=${max}&col=1&base=10&format=plain&rnd=new`;
+                const response = await this.helpers.httpRequest({
+                        method: 'GET',
+                        url,
+                        json: false
+                    });
+                responseData.push({ random: response });
+            }
+        }
         return [this.helpers.returnJsonArray(responseData)];
     }
 }
