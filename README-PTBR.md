@@ -2,6 +2,11 @@
 
 ![Banner image](https://user-images.githubusercontent.com/10284570/173569848-c624317f-42b1-45a6-ab09-f0ea3c247648.png)
 
+| Idioma | Arquivo |
+|---|---|
+| English 🇬🇧/🇺🇸| [README](README.md) |
+| Português 🇵🇹/🇧🇷| [README-PTBR](README-PTBR.md) |
+
 Esse é um conector comunitário da n8n. Ele permite você utilizar a [API do Random.org](https://www.random.org/integers/) para gerar verdadeiros números aleatórios entre dois valores em seus fluxos n8n.
 
 [n8n](https://n8n.io/) é uma plataforma de automação de fluxo de trabalho [licenciada com código justo](https://docs.n8n.io/reference/license/).

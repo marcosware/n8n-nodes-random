@@ -4,8 +4,8 @@
 
 | Language | File |
 |---|---|
-| English 🇬🇧/🇺🇸| README(README.md) |
-| Português 🇵🇹/🇧🇷| README-PTBR(README-PTBR.md) |
+| English 🇬🇧/🇺🇸| [README](README.md) |
+| Português 🇵🇹/🇧🇷| [README-PTBR](README-PTBR.md) |
 
 This is an n8n community node. It lets you use [Random.org API](https://www.random.org/integers/) to generate a true random number between two values in your n8n workflows.
 
