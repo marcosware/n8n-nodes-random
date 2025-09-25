@@ -49,7 +49,7 @@ You need the following installed on your development machine:
 ## Environment Variables
 
 If running n8n via Docker, you can configure environment variables in a .env file or directly in docker-compose.yml:
-    ```
+```bash
     GENERIC_TIMEZONE=America/Sao_Paulo
     TZ=America/Sao_Paulo
     N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true
@@ -61,7 +61,7 @@ If running n8n via Docker, you can configure environment variables in a .env fil
     DB_POSTGRESDB_USER=n8n_user
     DB_POSTGRESDB_PASSWORD=n8n_password
     N8N_CUSTOM_EXTENSIONS=/home/node/.n8n/custom
-    ```
+```
 This ensures n8n connects correctly to the database and loads your custom nodes.
 
 ## Usage

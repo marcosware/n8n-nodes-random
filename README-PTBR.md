@@ -49,7 +49,7 @@ Você precisa do seguinte instalado na sua máquina de desenvolvimento:
 ## Variáveis de Ambiente
 
 Se rodando n8n via Docker, você pode configurar as variáveis de mabiente em um arquivo .env ou diretamente no docker-compose.yml:
-    ```
+```bash
     GENERIC_TIMEZONE=America/Sao_Paulo
     TZ=America/Sao_Paulo
     N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true
@@ -61,7 +61,7 @@ Se rodando n8n via Docker, você pode configurar as variáveis de mabiente em um
     DB_POSTGRESDB_USER=n8n_user
     DB_POSTGRESDB_PASSWORD=n8n_password
     N8N_CUSTOM_EXTENSIONS=/home/node/.n8n/custom
-    ```
+```
 Isso garante que o n8n conecte corretamente ao banco de dados e carregue seus conectores personalizados.
 
 ## Uso
