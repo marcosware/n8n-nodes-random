@@ -1,6 +1,6 @@
 # n8n-nodes-random
 
-[Leia este README em português](README-PTBR.md)
+🇵🇹/🇧🇷 [Leia este README em português](README-PTBR.md) 🇵🇹/🇧🇷 
 
 ![Banner image](https://user-images.githubusercontent.com/10284570/173569848-c624317f-42b1-45a6-ab09-f0ea3c247648.png)
 
@@ -30,9 +30,9 @@ You need the following installed on your development machine:
   - Windows: [NodeJS - Microsoft Guide](https://docs.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-windows).
 * [Docker](https://www.docker.com/) and Docker Compose
 * Install n8n globally:
-  ```
-  npm install n8n -g
-  ```
+    ```
+    npm install n8n -g
+    ```
 
 ## Installation
 
@@ -49,19 +49,19 @@ You need the following installed on your development machine:
 ## Environment Variables
 
 If running n8n via Docker, you can configure environment variables in a .env file or directly in docker-compose.yml:
-  ```bash
-  GENERIC_TIMEZONE=America/Sao_Paulo
-  TZ=America/Sao_Paulo
-  N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true
-  N8N_RUNNERS_ENABLED=true
-  DB_TYPE=postgresdb
-  DB_POSTGRESDB_HOST=postgres
-  DB_POSTGRESDB_PORT=5432
-  DB_POSTGRESDB_DATABASE=n8n_db
-  DB_POSTGRESDB_USER=n8n_user
-  DB_POSTGRESDB_PASSWORD=n8n_password
-  N8N_CUSTOM_EXTENSIONS=/home/node/.n8n/custom
-  ```
+    ```bash
+    GENERIC_TIMEZONE=America/Sao_Paulo
+    TZ=America/Sao_Paulo
+    N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true
+    N8N_RUNNERS_ENABLED=true
+    DB_TYPE=postgresdb
+    DB_POSTGRESDB_HOST=postgres
+    DB_POSTGRESDB_PORT=5432
+    DB_POSTGRESDB_DATABASE=n8n_db
+    DB_POSTGRESDB_USER=n8n_user
+    DB_POSTGRESDB_PASSWORD=n8n_password
+    N8N_CUSTOM_EXTENSIONS=/home/node/.n8n/custom
+    ```
 This ensures n8n connects correctly to the database and loads your custom nodes.
 
 ## Usage
@@ -75,9 +75,9 @@ This ensures n8n connects correctly to the database and loads your custom nodes.
 * Add new nodes under /nodes and credentials under /credentials.
 * Update the "n8n" section in package.json to include them.
 * Build using:
-```
-npm run build
-```
+    ```
+    npm run build
+    ```
 * Restart the Docker container to test your changes.
 * Use npm run lint to check for errors, or npm run lintfix to automatically fix issues.
 * See n8n node creation guide
