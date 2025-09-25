@@ -69,9 +69,13 @@ This ensures n8n connects correctly to the database and loads your custom nodes.
 
 ## Usage
 
-* Min: Minimal value for the random number.
-* Max: Maximum value for the random number.
-* Values cannot be the same.
+1. Add the `Random` node to your workflow.
+2. Configure the fields:
+   - Min: the lowest possible value for the random number.
+   - Max: the highest possible value for the random number.
+   - The values cannot be the same.
+3. Connect it to the next node to use the generated number.
+4. Run the workflow.
 
 ## Developing
 

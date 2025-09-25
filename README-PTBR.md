@@ -69,9 +69,13 @@ Isso garante que o n8n conecte corretamente ao banco de dados e carregue seus co
 
 ## Uso
 
-* Min: Valor mínimo para o número aleatório.
-* Max: Valor máximo para o número aleatório.
-* Os valores não podem ser iguais.
+1. Adicione o node `Random` ao seu workflow.
+2. Configure os campos:
+   - Min: menor valor possível para o número aleatório.
+   - Max: maior valor possível para o número aleatório.
+   - Os valores não podem ser iguais.
+3. Conecte ao próximo node para usar o número gerado.
+4. Execute o workflow.
 
 ## Desenvolvendo
 
