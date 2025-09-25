@@ -1,0 +1,48 @@
+version: '3.8'
+
+volumes:
+  db_storage:
+  n8n_storage:
+
+services:
+  postgres:
+    image: postgres:16
+    restart: always
+    environment:
+      - POSTGRES_USER=n8n_user               # Usuário admin do PostgreSQL
+      - POSTGRES_PASSWORD=n8n_password      # Senha do usuário admin
+      - POSTGRES_DB=n8n_db                   # Nome do banco de dados
+    volumes:
+      - db_storage:/var/lib/postgresql/data  # Volume para persistir os dados
+      - ./init-data.sh:/docker-entrypoint-initdb.d/init-data.sh  # Script de inicialização, se necessário
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -h localhost -U n8n_user -d n8n_db']
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  n8n:
+    image: docker.n8n.io/n8nio/n8n
+    container_name: n8n
+    restart: always
+    environment:
+      - GENERIC_TIMEZONE=America/Sao_Paulo
+      - TZ=America/Sao_Paulo
+      - N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true
+      - N8N_RUNNERS_ENABLED=true
+      - N8N_CUSTOM_EXTENSIONS=/home/node/.n8n/custom
+      - DB_TYPE=postgresdb
+      - DB_POSTGRESDB_HOST=postgres              # Nome do serviço postgres no Docker Compose
+      - DB_POSTGRESDB_PORT=5432                  # Porta do PostgreSQL
+      - DB_POSTGRESDB_DATABASE=n8n_db           # Banco de dados do PostgreSQL (mesmo que no postgres)
+      - DB_POSTGRESDB_USER=n8n_user             # Usuário não-root para o n8n
+      - DB_POSTGRESDB_PASSWORD=n8n_password        # Senha para o usuário não-root
+    ports:
+      - 5678:5678                               # Porta para acessar o n8n
+    links:
+      - postgres                                 # Link para o PostgreSQL (não necessário com depends_on, mas deixa explícito)
+    volumes:
+      - ~/.n8n:/home/node/.n8n            # Volume para persistir os dados do n8n
+    depends_on:
+      postgres:
+        condition: service_healthy             # Garante que o n8n só inicie quando o PostgreSQL estiver saudável
