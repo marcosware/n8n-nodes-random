@@ -6,10 +6,10 @@ This is an n8n community node. It lets you use Random.org API to generate a rand
 
 [n8n](https://n8n.io/) is a [fair-code licensed](https://docs.n8n.io/reference/license/) workflow automation platform.
 
-[Installation](#installation)
-[Operations](#operations)  
-[Compatibility](#compatibility)  
+[Installation](#installation)  
+[Usage](#usage)
 [Resources](#resources)
+[License](#license)
 
 ## Prerequisites
 
@@ -19,7 +19,7 @@ You need the following installed on your development machine:
 * Node.js and npm. Minimum version Node 20.
   - Linux/Mac: [nvm - Node Version Manager](https://github.com/nvm-sh/nvm).
   - Windows: [NodeJS - Microsoft Guide](https://docs.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-windows).
-* Docker and Docker Compose
+* [Docker](https://www.docker.com/) and Docker Compose
 * Install n8n with:
   ```
   npm install n8n -g
@@ -29,7 +29,7 @@ You need the following installed on your development machine:
 
 1. Clone the repo:
     ```bash
-    git clone https://github.com/<your-username>/n8n-nodes-random.git
+    git clone https://github.com/marcosware/n8n-nodes-random.git
     cd n8n-nodes-random
     ```
 2. Run `npm i` to install dependencies.
@@ -39,13 +39,8 @@ You need the following installed on your development machine:
 
 ## Usage
 
-
-
-_By the time users are looking for community nodes, they probably already know n8n basics. But if you expect new users, you can link to the [Try it out](https://docs.n8n.io/try-it-out/) documentation to help them get started._
-
-## More information
-
-Refer to our [documentation on creating nodes](https://docs.n8n.io/integrations/creating-nodes/) for detailed information on building your own nodes.
+* Minimal and maximum value: Range to the random number generator.
+* Can't be the same value.
 
 ## Resources
 
