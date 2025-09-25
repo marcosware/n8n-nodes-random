@@ -1,7 +1,5 @@
 # n8n-nodes-random
 
-🇬🇧/🇺🇸 [Read this README in english](README.md) 🇬🇧/🇺🇸
-
 ![Banner image](https://user-images.githubusercontent.com/10284570/173569848-c624317f-42b1-45a6-ab09-f0ea3c247648.png)
 
 Esse é um conector comunitário da n8n. Ele permite você utilizar a [API do Random.org](https://www.random.org/integers/) para gerar verdadeiros números aleatórios entre dois valores em seus fluxos n8n.
